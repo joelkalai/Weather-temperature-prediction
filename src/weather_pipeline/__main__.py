@@ -1,0 +1,6 @@
+"""Make package executable via `python -m weather_pipeline`."""
+
+from .cli import main
+
+if __name__ == "__main__":
+    main()

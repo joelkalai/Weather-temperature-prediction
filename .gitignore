@@ -38,3 +38,16 @@ spark-warehouse/
 results/*.csv
 results/*.png
 !results/.gitkeep
+
+# Testing & linting
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.ruff_cache/
+.mypy_cache/
+
+# Eggs
+*.egg-info/
+dist/
+build/

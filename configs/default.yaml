@@ -1,0 +1,28 @@
+# Default configuration for weather prediction pipeline
+
+data:
+  # Update these paths to point to your actual data
+  raw_weather_path: "data/daily_weather.parquet"
+  cities_path: "data/cities.csv"
+  countries_path: "data/countries.csv"
+  output_path: "results"
+  top_n_cities: 10
+
+features:
+  lag_days: 1
+  rolling_window_7d: 7
+  rolling_window_30d: 30
+  trend_lag: 2
+
+split:
+  split_year: 2010  # Train: < 2010, Test: >= 2010
+
+model:
+  num_folds: 3
+  parallelism: 2
+  cv_metric: "mae"
+
+  # Hyperparameter grid for cross-validation
+  max_iter_grid: [50, 100]
+  max_depth_grid: [5, 7, 10]
+  step_size_grid: [0.05, 0.1]
